@@ -1,10 +1,10 @@
-package org.asgs.exercises;
+package org.asgs.exercises.java9;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class RxStreams
 {
     public static void main( String[] args )
     {

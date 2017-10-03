@@ -1,11 +1,11 @@
-package org.asgs.exercises;
+package org.asgs.exercises.java9;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App.
+ * Unit test for simple RxStreams.
  */
 public class AppTest 
     extends TestCase
