@@ -13,6 +13,9 @@ public class RxStreamsDemo {
     submissionPubSub();
   }
 
+  /**
+   * Stream events to subscribers using a <code>SubmissionPublisher</code> that comes with JDK 9.
+   */
   private static void submissionPubSub() {
     SubmissionPublisher<Integer> publisher = new SubmissionPublisher<>();
     SimpleSubscriber<Integer> subscriber = new SimpleSubscriber<>();
@@ -21,6 +24,10 @@ public class RxStreamsDemo {
     publisher.close();
   }
 
+  /**
+   * Stream events to subscribers using a <code>SimplePublisher</code> that doesn't **comply** to
+   * the <code>Flow.Subscription</code> semantics.
+   */
   private static void simplePubSub() {
     SimplePublisher<Integer> publisher = new SimplePublisher<>();
     SimpleSubscriber<Integer> subscriber = new SimpleSubscriber<>();
