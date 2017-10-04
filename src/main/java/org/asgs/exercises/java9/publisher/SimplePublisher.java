@@ -21,4 +21,9 @@ public class SimplePublisher<T> implements Flow.Publisher<T> {
   public void submit(T element) {
     subscribers.parallelStream().forEach(s -> s.onNext(element));
   }
+
+  /** Signals all subscribers that they have reached the End of Stream. */
+  public void finish() {
+    subscribers.parallelStream().forEach(Flow.Subscriber::onComplete);
+  }
 }
