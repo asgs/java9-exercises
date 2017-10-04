@@ -9,9 +9,9 @@ import java.util.concurrent.Flow;
  * invoked. It uses parallelStream to publish the events, thereby using the default internal
  * executor JDK uses.
  *
- * <p>Since it's simple enough, it doesn't really a <code>Flow.Subscription</code> instance to its
- * subscribers. Which means that subscribers don't request nor cancel the events and it's upto the
- * Publisher.
+ * <p>Since it's simple enough, it doesn't really manage a <code>Flow.Subscription</code> instance
+ * to its subscribers. Which means that its subscribers don't request nor cancel the events and it's
+ * up to the Publisher.
  */
 public class SimplePublisher<T> implements Flow.Publisher<T> {
 

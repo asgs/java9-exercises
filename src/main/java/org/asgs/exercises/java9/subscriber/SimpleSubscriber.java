@@ -18,7 +18,7 @@ public class SimpleSubscriber<T> implements Flow.Subscriber<T> {
   public void onNext(T item) {
     System.out.println("Item received " + item);
     if (subscription != null) {
-      subscription.request(1);
+      subscription.request(1); // This way the Publisher knows to produce more items, else it stops.
       System.out.println("Requesting one more item.");
     }
   }

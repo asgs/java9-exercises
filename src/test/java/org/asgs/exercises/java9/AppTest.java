@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple RxStreams.
+ * Unit test for simple RxStreamsDemo.
  */
 public class AppTest 
     extends TestCase
