@@ -1,4 +1,4 @@
-package org.asgs.exercises.java9.subscriber;
+package org.asgs.exercises.java9.rx.subscriber;
 
 import java.util.concurrent.Flow;
 import java.util.concurrent.atomic.AtomicInteger;

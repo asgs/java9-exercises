@@ -1,8 +1,8 @@
-package org.asgs.exercises.java9;
+package org.asgs.exercises.java9.rx;
 
-import org.asgs.exercises.java9.publisher.SimplePublisher;
-import org.asgs.exercises.java9.subscriber.LimitedConsumptionSubscriber;
-import org.asgs.exercises.java9.subscriber.SimpleSubscriber;
+import org.asgs.exercises.java9.rx.publisher.SimplePublisher;
+import org.asgs.exercises.java9.rx.subscriber.LimitedConsumptionSubscriber;
+import org.asgs.exercises.java9.rx.subscriber.SimpleSubscriber;
 
 import java.util.concurrent.SubmissionPublisher;
 import java.util.stream.IntStream;

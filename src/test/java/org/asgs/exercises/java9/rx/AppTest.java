@@ -1,4 +1,4 @@
-package org.asgs.exercises.java9;
+package org.asgs.exercises.java9.rx;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

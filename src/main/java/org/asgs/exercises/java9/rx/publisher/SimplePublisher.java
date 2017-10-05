@@ -1,4 +1,4 @@
-package org.asgs.exercises.java9.publisher;
+package org.asgs.exercises.java9.rx.publisher;
 
 import java.util.ArrayList;
 import java.util.List;
