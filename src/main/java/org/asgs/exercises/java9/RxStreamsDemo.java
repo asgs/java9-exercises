@@ -53,7 +53,8 @@ public class RxStreamsDemo {
 
   /**
    * Stream events to subscribers using a <code>SimplePublisher</code> that doesn't **comply** to
-   * the <code>Flow.Subscription</code> semantics.
+   * the <code>Flow.Subscription</code> semantics. This probably serves as an example of how NOT to
+   * do Reactive programming.
    */
   private static void simplePubSub() {
     SimplePublisher<Integer> publisher = new SimplePublisher<>();

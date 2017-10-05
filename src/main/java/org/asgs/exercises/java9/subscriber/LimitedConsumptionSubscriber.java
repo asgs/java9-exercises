@@ -3,6 +3,10 @@ package org.asgs.exercises.java9.subscriber;
 import java.util.concurrent.Flow;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * A Subscriber which can only consume a certain amount of events after which it signals the
+ * Publisher to cancel the streaming.
+ */
 public class LimitedConsumptionSubscriber<T> extends SimpleSubscriber<T> {
   private AtomicInteger counter = new AtomicInteger();
   private Integer MAX_COUNT = 89;
