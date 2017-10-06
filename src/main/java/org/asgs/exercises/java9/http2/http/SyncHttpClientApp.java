@@ -11,12 +11,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class HttpClientApp {
+public class SyncHttpClientApp {
   private static ExecutorService executorService = Executors.newSingleThreadExecutor();
 
   public static void main(String[] args)
       throws ExecutionException, InterruptedException, IOException {
-    HttpClientApp httpClientApp = new HttpClientApp();
+    SyncHttpClientApp httpClientApp = new SyncHttpClientApp();
     httpClientApp.makeGetCall();
     httpClientApp.makePostCall();
     executorService.shutdown();
