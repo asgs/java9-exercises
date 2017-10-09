@@ -22,8 +22,8 @@ public class ASyncHttpClientApp {
     // TODO - this is not the right way to wait for. Executor should be shutdown first and then
     // awaited for termination. Yet it is the only it works and NOT the way it's intended to.
     // Possible explanation is HttpClient delegates the call to another thread that's NOT managed by
-    // the executorService passed to it. Hence executorService thinks its tasks are already
-    // completed, hence doesn't wait anymore.
+    // the executorService which we passed to it. Hence executorService thinks its tasks are already
+    // completed, thus it doesn't wait anymore.
     executorService.awaitTermination(10, TimeUnit.SECONDS);
     executorService.shutdown();
   }
@@ -57,7 +57,7 @@ public class ASyncHttpClientApp {
 
   private HttpClient getHttpClient() {
     return HttpClient.newBuilder()
-        //.executor(executorService)
+        .executor(executorService)
         // .followRedirects(HttpClient.Redirect.SECURE)
         .version(HttpClient.Version.HTTP_2)
         .build();
@@ -82,7 +82,7 @@ public class ASyncHttpClientApp {
         builder.append(stackTraceElement.toString());
         builder.append('\n');
       }
-      builder.append("Caused By:");
+      builder.append("----Caused By----:");
       stackTrace = error.getCause().getStackTrace();
       for (StackTraceElement stackTraceElement : stackTrace) {
         builder.append(stackTraceElement.toString());
