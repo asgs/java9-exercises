@@ -8,6 +8,12 @@ import java.util.concurrent.CompletionStage;
 /** */
 public class WsListener implements WebSocket.Listener {
 
+  private WsCloseEventHandler closeEventHandler;
+
+  public WsListener(WsCloseEventHandler handler) {
+    this.closeEventHandler = handler;
+  }
+
   @Override
   public void onOpen(WebSocket socket) {
     System.out.println("Opening connection to socket " + socket);
@@ -35,6 +41,7 @@ public class WsListener implements WebSocket.Listener {
   @Override
   public CompletionStage<?> onClose(WebSocket webSocket, int statusCode, String reason) {
     System.out.println("Received close from Remote WS server; Reason is " + reason);
+    closeEventHandler.onClose();
     return null;
   }
 }

@@ -10,7 +10,7 @@ import java.net.URI;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-public class WsClientApp {
+public class WsClientApp implements WsCloseEventHandler {
 
   private HttpClient httpClient = HttpClient.newHttpClient();
 
@@ -20,7 +20,8 @@ public class WsClientApp {
     CompletableFuture<WebSocket> wsFuture =
         clientApp
             .httpClient
-            .newWebSocketBuilder(URI.create("ws://localhost:8080/jshell-ws/"), new WsListener())
+            .newWebSocketBuilder(
+                URI.create("ws://localhost:8080/jshell-ws/"), new WsListener(clientApp))
             .buildAsync();
     WebSocket webSocket = wsFuture.get();
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -32,5 +33,10 @@ public class WsClientApp {
     }
     System.out.println("Closing connection to remote WS Server.");
     webSocket.sendClose(WebSocket.NORMAL_CLOSURE, "Done!");
+  }
+
+  @Override
+  public void onClose() {
+    System.exit(0); // Our job is done here.
   }
 }
