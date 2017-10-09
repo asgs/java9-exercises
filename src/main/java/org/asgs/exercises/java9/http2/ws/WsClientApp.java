@@ -32,7 +32,7 @@ public class WsClientApp implements WsCloseEventHandler {
       userInput = reader.readLine();
     }
     System.out.println("Closing connection to remote WS Server.");
-    webSocket.sendClose(WebSocket.NORMAL_CLOSURE, "Done!");
+    webSocket.sendClose(WebSocket.NORMAL_CLOSURE, "My Client is done! Thank you, Server.");
   }
 
   @Override

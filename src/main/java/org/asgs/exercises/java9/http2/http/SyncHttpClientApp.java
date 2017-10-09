@@ -45,10 +45,10 @@ public class SyncHttpClientApp {
 
   private HttpClient getHttpClient() {
     return HttpClient.newBuilder()
-            .executor(executorService)
-            .followRedirects(HttpClient.Redirect.SECURE)
-            .version(HttpClient.Version.HTTP_2)
-            .build();
+        .executor(executorService)
+        .followRedirects(HttpClient.Redirect.SECURE)
+        .version(HttpClient.Version.HTTP_2)
+        .build();
   }
 
   private String getXmlPayload() {
