@@ -5,7 +5,7 @@
     <artifactId>java9-exercises</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>java9</name>
+    <name>java9-exercises</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -13,6 +13,25 @@
         <maven.compiler.source>1.9</maven.compiler.source>
         <maven.compiler.target>1.9</maven.compiler.target>
     </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+  <modules>
+    <module>mod1</module>
+    <module>mod2</module>
+    <module>modhttp2</module>
+    <module>rx</module>
+  </modules>
 
     <dependencies>
         <dependency>
@@ -22,9 +41,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-  <modules>
-    <module>mod1</module>
-    <module>mod2</module>
-    <module>modhttp2</module>
-  </modules>
 </project>

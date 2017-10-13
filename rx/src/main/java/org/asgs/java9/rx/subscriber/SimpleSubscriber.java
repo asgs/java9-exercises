@@ -1,4 +1,4 @@
-package org.asgs.exercises.java9.rx.subscriber;
+package org.asgs.java9.rx.subscriber;
 
 import java.util.concurrent.Flow;
 

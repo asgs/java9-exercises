@@ -8,14 +8,60 @@
         <artifactId>java9-exercises</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>org.asgs.java9.exercises</groupId>
-    <artifactId>modules</artifactId>
+    <groupId>org.asgs.java9.modules</groupId>
+    <artifactId>mod2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>mod2</name>
     <url>http://maven.apache.org</url>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addClasspath>true</addClasspath>
+                                <classpathPrefix>../../mod1/target</classpathPrefix>
+                            </manifest>
+                            <manifestEntries>
+                                <Main-Class>org.asgs.java9.modules.mod2.org.asgs.java9.modules.mod2.Mod2</Main-Class>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <!-- Shade plugin can't, yet, create Uber Jars out of Java 9 modules. More at http://openjdk.java.net/projects/jigsaw/spec/issues/#MultiModuleExecutableJARs -->
+                <!--plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <manifestEntries>
+                                    <Main-Class>org.asgs.java9.modules.mod2.org.asgs.java9.modules.mod2.Mod2</Main-Class>
+                                    <Build-Number>123</Build-Number>
+                                </manifestEntries>
+                            </transformer>
+                        </transformers>
+                    </configuration>
+                </plugin-->
+            </plugins>
+        </pluginManagement>
+    </build>
+
     <dependencies>
         <dependency>
-            <groupId>org.asgs.java9.exercises</groupId>
+            <groupId>org.asgs.java9.modules</groupId>
             <artifactId>mod1</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
